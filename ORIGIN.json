@@ -1,0 +1,71 @@
+{
+  "copyright_holder": "Adam Benenson",
+  "declared_source_license": "Apache-2.0",
+  "provenance_scope": "Only the listed generic mathematical files. No license is inferred for any surrounding private repository.",
+  "license_text_source": "https://github.com/abenenson/cencov-petz/blob/f6cf035a4c2882ae1fbc0a83416ab8142aceb676/LICENSE",
+  "files": [
+    {
+      "source_file": "InformationTheory/Finite/ProbabilityVector.lean",
+      "original_sha256": "52370cbcb317fe20c48048891e15f253a1a991b1ee95150eefa657da1056ba23",
+      "extracted_file": "FiniteMarkovKernels/ProbabilityVector.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only",
+      "extracted_sha256": "85be10367fc0140319072718c226ad7aceec0fe7f637bdb0c4150669ca7d8b8f"
+    },
+    {
+      "source_file": "InformationTheory/Finite/MarkovKernelContraction.lean",
+      "original_sha256": "d9214971a258d209a70e7122b63516abeca2d7d066cd918874e6187667c8bc30",
+      "extracted_file": "FiniteMarkovKernels/MarkovKernelContraction.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only",
+      "extracted_sha256": "514415e57c003c6b41fc8bf23e481d3173bc7412e8f4323c709a81d22733c2e4"
+    },
+    {
+      "source_file": "InformationTheory/Finite/DobrushinCoefficient.lean",
+      "original_sha256": "7e4abc53528f43faca230ec24ae8ac576f396ef4770dc738901e5e626b4c3f31",
+      "extracted_file": "FiniteMarkovKernels/DobrushinCoefficient.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only; document normalizedDifference_apply and remove only the unused explicit DecidableEq A binder from contractionCoefficient_le_rowContractionCoefficient (proof unchanged)",
+      "extracted_sha256": "b1e95ac612c6255e2a999bcce7acd600146bfbe1f41ddc7be514faecb230644b"
+    },
+    {
+      "source_file": "InformationTheory/Finite/BlockErgodicity.lean",
+      "original_sha256": "2a3f41db641c4c147ce50ee855e9778efdb9c91d6d067219e24985887347b7f2",
+      "extracted_file": "FiniteMarkovKernels/BlockErgodicity.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only",
+      "extracted_sha256": "553cfd4a4d71b293f0a804f457389903881bb5e3550da74a6fb7fde6820c7f4d"
+    },
+    {
+      "source_file": "InformationTheory/Finite/KernelPerturbation.lean",
+      "original_sha256": "b3c5d9468ae056858b49e81eb48c69ea9f70d808e215505d75119c9439137341",
+      "extracted_file": "FiniteMarkovKernels/KernelPerturbation.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only",
+      "extracted_sha256": "6738b924da90ecdf4b675036a0c059aa182408cf72ae6ce71935650fcf674e39"
+    },
+    {
+      "source_file": "InformationTheory/Finite/BinaryKernelContraction.lean",
+      "original_sha256": "051e2b4eefcfcfe0d0bdc76f7205bc8ea48765200d1ff5c28ba1a44ae947b7ce",
+      "extracted_file": "FiniteMarkovKernels/BinaryKernelContraction.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only",
+      "extracted_sha256": "c67cde8cac564f1f88992cf7ff710a793b16d556d0654d1e39bec32b090d6e3f"
+    },
+    {
+      "source_file": "InformationTheory/Finite/PMFAdapter.lean",
+      "original_sha256": "00e72f8c8f59476532859d887c3f356adeff48f3668bc4854f2ceaba93ae2ce4",
+      "extracted_file": "FiniteMarkovKernels/PMFAdapter.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes only",
+      "extracted_sha256": "11aa4ea099a2af1f49a528dd166113091d43a96d4e69c0b40a9fe539c60a6737"
+    }
+  ]
+}
