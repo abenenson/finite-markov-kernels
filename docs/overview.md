@@ -3,15 +3,25 @@
 Finite probability vectors admit zero coordinates. Finite kernels act on them by matrix
 multiplication, with total variation normalized as one half of the L1 distance.
 
-The library proves the operator/row-diameter Dobrushin coefficient identity,
-submultiplicativity, finite-block contraction bounds, uniqueness and attraction toward
-a supplied stationary law, and finite-time/stationary perturbation estimates. Binary-input
-kernels have an exact scaling identity; binary endomorphisms have an exact geometric law.
-The PMF adapter connects these objects to Mathlib PMF and probability kernels.
+The library proves stationary-law existence for every kernel on a nonempty finite state space,
+the operator/row-diameter Dobrushin coefficient identity, submultiplicativity, finite-block
+contraction bounds, uniqueness and attraction, and finite-time/stationary perturbation estimates.
+Binary-input kernels have an exact scaling identity; binary endomorphisms have an exact geometric
+law. The PMF adapter connects these objects to Mathlib PMF and probability kernels.
 
-Stationary-law existence is not claimed: the stationary laws in those bounds are supplied
-and their stationarity is a theorem hypothesis. Strict block contraction is also explicit.
-Binary exact formulas are binary results, not assertions for arbitrary alphabets.
+The existence theorem in `StationaryExistence` is exposed as
+`FiniteMarkovKernel.exists_isStationary`. Its proof forms Cesàro averages of an arbitrary orbit,
+extracts a convergent subsequence from the compact coordinate cube, and uses Mathlib's bounded
+Birkhoff-average shift limit to prove stationarity. Finite nonemptiness is explicit; no supplied
+stationary law or strict positivity assumption enters this theorem.
+
+`MeasureTotalVariation` identifies the finite distance with one half of the total mass of
+Mathlib's `SignedMeasure.totalVariation` for the difference of the encoded probability measures.
+The theorem `ProbabilityVector.signedMeasure_totalVariation_univ` states the factor in the other
+direction. Measurable singleton assumptions ensure the finite encodings retain all coordinates.
+
+Existence alone gives neither uniqueness nor mixing. Strict block contraction remains an explicit
+hypothesis for uniqueness and quantitative decay. Binary formulas remain binary results.
 
 ## Organization
 
@@ -22,6 +32,8 @@ Binary exact formulas are binary results, not assertions for arbitrary alphabets
 - `KernelPerturbation`: finite-time and stationary-law stability estimates.
 - `BinaryKernelContraction`: exact binary finite-lag scaling and asymptotic decay.
 - `PMFAdapter`: PMF/kernel interoperability.
+- `StationaryExistence`: unconditional finite existence and strict-contraction uniqueness.
+- `MeasureTotalVariation`: the factor-two bridge to Mathlib signed-measure variation.
 
 The top-level import exports the mathematical modules. `FiniteMarkovKernelsExamples` is a separate
 library target: it is built by the default build but is not imported by the public
@@ -77,3 +89,12 @@ per-file Apache notices and ORIGIN hashes. Its additional implemented gates are 
 builds, all16 source linters, the explicit transitive axiom ledger, durable verifier rejection
 controls and always-retained CI evidence configuration. No precedent was modified or requalified.
 The supported pair remains Lean4.34.1/d13f23b; earlier-pair compatibility is not inferred.
+
+## Readiness additions, 2026-10-23
+
+The mathematical additions are stationary existence and the explicit measure-variation bridge.
+The README now leads with theorem hypotheses, formulas, and checked consumer examples; qualification
+process detail remains here. The locked Lean/Mathlib pair and public-dependency policy are unchanged.
+Historical receipts under `docs/qualification*` and `docs/private-release*` refer to their recorded
+source identities; they do not qualify later source edits. Current verification records are emitted
+by `python3 scripts/verify.py` and retained separately for the exact checked source tree.
