@@ -1,33 +1,59 @@
 # finite-markov-kernels
 
-Finite Markov-kernel contraction and mixing, formalized in Lean with Mathlib only.
+Finite Markov kernels, stationary laws, and quantitative mixing in Lean and Mathlib.
+Probability vectors may have zero coordinates. Kernels may be rectangular; stationary
+laws concern endomorphisms on a **nonempty finite** state space.
 
-Private preparation. Local qualification and its exact source identities are recorded
-in `docs/qualification.json` (historical Oct17) and `docs/private-release-qualification.json`
-when the refreshed run is sealed. Hosted CI execution is a separate result;
-no hosted pass or public release is claimed.
+The public API proves:
 
-## Mathematical scope
+- **Stationary existence:** every finite endomorphism has a probability vector `π` with
+  `K.apply π = π`. The proof uses compactness and Cesàro averages; it needs no positivity,
+  irreducibility, or contraction assumption.
+- **Dobrushin identity:** the operator contraction coefficient equals the maximum TV
+  distance between rows. Coefficients are submultiplicative under composition and powers.
+- **Uniqueness and mixing:** a coefficient strictly below one at any finite block gives a
+  unique stationary law. For every stationary `π`,
+  `TV((K.iterate n).apply p, π) ≤ δ(K)^n * TV(p, π)`, with corresponding block bounds.
+- **Mathlib integration:** finite laws and rows roundtrip through `PMF` and probability
+  kernels. Mathlib's signed-measure variation mass of `μ - ν` is **twice** this library's
+  `TV(p, q) = (1/2) * ∑ a, |p a - q a|`.
+- **Further bounds:** finite-time and stationary perturbation estimates, plus exact binary
+  contraction formulas and geometric rates.
 
-Finite probability vectors admit zero coordinates. Finite kernels act on them by matrix
-multiplication, with total variation normalized as one half of the L1 distance.
+## Use
 
-The library proves the operator/row-diameter Dobrushin coefficient identity,
-submultiplicativity, finite-block contraction bounds, uniqueness and attraction toward
-a supplied stationary law, and finite-time/stationary perturbation estimates. Binary-input
-kernels have an exact scaling identity; binary endomorphisms have an exact geometric law.
-The PMF adapter connects these objects to Mathlib PMF and probability kernels.
+```lean
+import FiniteMarkovKernels
 
-Stationary-law existence is not claimed: the stationary laws in those bounds are supplied
-and their stationarity is a theorem hypothesis. Strict block contraction is also explicit.
-Binary exact formulas are binary results, not assertions for arbitrary alphabets.
+open FiniteMarkovKernels
 
-## Build and verification
+example {A : Type*} [Fintype A] [Nonempty A] (K : FiniteMarkovKernel A A) :
+    ∃ π : ProbabilityVector A, K.IsStationary π :=
+  K.exists_isStationary
 
-The supported tested pair is Lean 4.34.1 and Mathlib commit
-`d13f23b723b8a846827a245b89c10fc7d3f11612`. Every transitive dependency is locked in
-`lake-manifest.json`. The author's earlier libraries currently pin Lean 4.29.1;
-compatibility with that older pair has not been tested or claimed here.
+example {A : Type*} [Fintype A] [Nonempty A] [DecidableEq A]
+    (K : FiniteMarkovKernel A A) (block : ℕ)
+    (h : FiniteMarkovKernel.contractionCoefficient (K.iterate block) < 1) :
+    ∃! π : ProbabilityVector A, K.IsStationary π :=
+  K.existsUnique_isStationary_of_iterate_contractionCoefficient_lt_one block h
+
+example {A : Type*} [Fintype A] [MeasurableSpace A] [MeasurableSingletonClass A]
+    (p q : ProbabilityVector A) :
+    ((p.toPMF.toMeasure.toSignedMeasure - q.toPMF.toMeasure.toSignedMeasure).totalVariation
+      Set.univ).toReal = 2 * ProbabilityVector.totalVariation p q :=
+  p.signedMeasure_totalVariation_univ q
+```
+
+[Checked examples](FiniteMarkovKernelsExamples/Basic.lean) include a binary channel with
+flip probability `1/4`, exact rate `1/2`, a fair stationary law, the measure-variation
+normalization, and generic existence-to-attraction and row-coefficient-to-uniqueness proofs.
+Import `FiniteMarkovKernelsExamples` to use them.
+
+## Build
+
+Pinned and tested: **Lean 4.34.1**, **Mathlib
+`d13f23b723b8a846827a245b89c10fc7d3f11612`**. Transitive dependencies are locked in
+[lake-manifest.json](lake-manifest.json).
 
 ```bash
 lake exe cache get
@@ -35,59 +61,16 @@ lake --rehash --wfail build
 python3 scripts/verify.py
 ```
 
-The verifier builds every authored module and example, re-elaborates
-each source with all 16 linters including theorem documentation, rejects warnings,
-checks declaration coverage, and audits transitive axioms of every explicit public
-name. Only `Classical.choice`, `Quot.sound` and `propext` are allowed. It rejects
-`sorry`, `admit`, explicit custom axioms and imports outside this package/Mathlib.
-Logs and receipts go into a new `verification-artifacts` directory per run; failures
-are retained. It uses Python's standard library and no private verification tooling.
+The verifier checks every source and example with all 16 linters, warnings fatal,
+public declaration coverage, and transitive axioms restricted to `Classical.choice`,
+`Quot.sound`, and `propext`. See [API and verification notes](docs/overview.md) for the
+module map and qualification evidence.
 
-## Usage
+Existence alone implies neither uniqueness nor convergence; the quantitative bounds retain
+explicit contraction hypotheses. Exact binary identities apply to binary alphabets.
+Related finite TV contraction and mixing formalizations already exist; see the
+[source overlap comparison](docs/overlap-audit.md) for scope and attribution.
 
-```lean
-import FiniteMarkovKernels
--- Examples are opt-in:
-import FiniteMarkovKernelsExamples
-```
-
-## Modules
-
-- `ProbabilityVector`: closed finite simplex, support and relabeling operations.
-- `MarkovKernelContraction`: total variation, application, composition and operator coefficient.
-- `DobrushinCoefficient`: row-diameter coefficient and its equality with the operator coefficient.
-- `BlockErgodicity`: uniqueness and attraction under a supplied strict temporal block.
-- `KernelPerturbation`: finite-time and stationary-law stability estimates.
-- `BinaryKernelContraction`: exact binary finite-lag scaling and asymptotic decay.
-- `PMFAdapter`: PMF/kernel interoperability.
-
-## Checked example
-
-`FiniteMarkovKernelsExamples.Basic` builds a channel that flips a Boolean input with probability 1/4,
-proves its row separation is 1/2, derives the exact finite-lag contraction formula,
-checks its fair stationary law and PMF roundtrip, and proves the identity channel
-retains full distinction at every lag.
-
-## Provenance and license
-
-Copyright 2026 Adam Benenson. Apache 2.0, matching the explicit notices retained in
-the extracted mathematical files. See [LICENSE](LICENSE), [NOTICE](NOTICE), and
-[ORIGIN.json](ORIGIN.json) for file identities and the limited extraction provenance.
-No surrounding repository or unrelated source is assigned a license here.
-
-[API and verification notes](docs/overview.md) describe the package boundary and
-qualification process. These are formalizations of the scoped mathematical results;
-no application-specific physical or empirical implication is claimed.
-
-## Private inspection update
-
-[Current overlap audit](docs/overlap-audit.md) records the source-level Mathlib/external comparison
-and limits novelty/upstream claims. The original mathematical files and pins are retained.
-Verifier hardening rejects native panics and malformed/error JSON even on exit zero, reads every
-ordinary import and fails closed on unsupported import headers, and refuses optimized Python
-that would disable assertions. Seven durable Python regression controls run before native CI;
-CI is configured to retain verification evidence using a pinned upload action. Configuration
-is not a hosted execution result. No public release or automatic upstream submission is enabled.
-
-Run the controls with `python3 -m unittest discover -s scripts -p 'test_*.py'`.
-The full verification command remains `python3 scripts/verify.py`.
+Apache 2.0. Copyright 2026 Adam Benenson. See [LICENSE](LICENSE), [NOTICE](NOTICE), and
+[extraction provenance](ORIGIN.json). This remains a private preparation; local verification
+and hosted CI execution are distinct results.

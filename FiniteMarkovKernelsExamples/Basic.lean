@@ -55,4 +55,31 @@ theorem binaryNoise_pmf_roundtrip (bit : Bool) :
     ProbabilityVector.ofPMF (binaryNoise bit).toPMF = binaryNoise bit :=
   ofPMF_toPMF _
 
+/-- Every finite nonempty kernel has a stationary law with the advertised attraction bound. -/
+theorem stationaryLaw_and_attraction {A : Type*} [Fintype A] [Nonempty A] [DecidableEq A]
+    (kernel : FiniteMarkovKernel A A) :
+    ∃ stationary : ProbabilityVector A, kernel.IsStationary stationary ∧
+      ∀ (steps : ℕ) (p : ProbabilityVector A),
+        totalVariation ((iterate kernel steps).apply p) stationary ≤
+          contractionCoefficient kernel ^ steps * totalVariation p stationary := by
+  obtain ⟨stationary, hstationary⟩ := exists_isStationary kernel
+  exact ⟨stationary, hstationary, fun steps p ↦
+    totalVariation_iterate_stationary_le kernel steps p stationary hstationary⟩
+
+/-- A strict row-diameter bound supplies a unique stationary law without a candidate law. -/
+theorem strictRowCoefficient_uniqueStationary {A : Type*} [Fintype A] [Nonempty A]
+    (kernel : FiniteMarkovKernel A A) (hstrict : rowContractionCoefficient kernel < 1) :
+    ∃! stationary : ProbabilityVector A, kernel.IsStationary stationary := by
+  classical
+  apply existsUnique_isStationary_of_contractionCoefficient_lt_one kernel
+  rwa [contractionCoefficient_eq_rowContractionCoefficient]
+
+/-- The noisy rows have finite TV one half and full signed-measure variation mass one. -/
+theorem binaryNoise_signedMeasure_variation [MeasurableSpace Bool]
+    [MeasurableSingletonClass Bool] :
+    (((binaryNoise false).toPMF.toMeasure.toSignedMeasure -
+      (binaryNoise true).toPMF.toMeasure.toSignedMeasure).totalVariation Set.univ).toReal = 1 := by
+  rw [signedMeasure_totalVariation_univ, binaryNoise_row_separation]
+  norm_num
+
 end FiniteMarkovKernels.Examples

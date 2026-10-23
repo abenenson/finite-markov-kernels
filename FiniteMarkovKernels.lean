@@ -10,6 +10,8 @@ import FiniteMarkovKernels.BlockErgodicity
 import FiniteMarkovKernels.KernelPerturbation
 import FiniteMarkovKernels.BinaryKernelContraction
 import FiniteMarkovKernels.PMFAdapter
+import FiniteMarkovKernels.StationaryExistence
+import FiniteMarkovKernels.MeasureTotalVariation
 
 /-!
 # FiniteMarkovKernels
