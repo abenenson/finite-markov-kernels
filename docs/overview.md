@@ -98,3 +98,10 @@ process detail remains here. The locked Lean/Mathlib pair and public-dependency 
 Historical receipts under `docs/qualification*` and `docs/private-release*` refer to their recorded
 source identities; they do not qualify later source edits. Current verification records are emitted
 by `python3 scripts/verify.py` and retained separately for the exact checked source tree.
+
+## Mathematical readiness qualification
+
+The [October 23 source qualification](readiness-qualification.json) records unconditional
+finite stationary existence, the Mathlib variation bridge, their consumers and current
+source hashes. Earlier receipts remain historical. Hosted CI and final-candidate review
+are separate results.

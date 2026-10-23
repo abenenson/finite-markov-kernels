@@ -1,0 +1,1041 @@
+{
+  "status": "passed",
+  "recorded_utc": "2026-10-23T15:57:41.870616+00:00",
+  "qualified_source_commit": "971b5bda19990b723ab4d68ac5a676cae7a13c9f",
+  "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "dependency_revisions": {
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "plausible": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+    "LeanSearchClient": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+    "importGraph": "e928b72544873815af278d38681b31c0293588e3",
+    "proofwidgets": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+    "aesop": "355695d523e41d0554926416cba2a2b3544fbbc9",
+    "Qq": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+    "batteries": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+    "Cli": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204"
+  },
+  "authored_source_sha256": {
+    "FiniteMarkovKernels/BinaryKernelContraction.lean": "c67cde8cac564f1f88992cf7ff710a793b16d556d0654d1e39bec32b090d6e3f",
+    "FiniteMarkovKernels/BlockErgodicity.lean": "553cfd4a4d71b293f0a804f457389903881bb5e3550da74a6fb7fde6820c7f4d",
+    "FiniteMarkovKernels/DobrushinCoefficient.lean": "b1e95ac612c6255e2a999bcce7acd600146bfbe1f41ddc7be514faecb230644b",
+    "FiniteMarkovKernels/KernelPerturbation.lean": "6738b924da90ecdf4b675036a0c059aa182408cf72ae6ce71935650fcf674e39",
+    "FiniteMarkovKernels/MarkovKernelContraction.lean": "514415e57c003c6b41fc8bf23e481d3173bc7412e8f4323c709a81d22733c2e4",
+    "FiniteMarkovKernels/MeasureTotalVariation.lean": "d830b16d5c9740f07e4f44e86e31f73d3ea52a00d6b553d3c3749c6ec5866d79",
+    "FiniteMarkovKernels/PMFAdapter.lean": "11aa4ea099a2af1f49a528dd166113091d43a96d4e69c0b40a9fe539c60a6737",
+    "FiniteMarkovKernels/ProbabilityVector.lean": "85be10367fc0140319072718c226ad7aceec0fe7f637bdb0c4150669ca7d8b8f",
+    "FiniteMarkovKernels/StationaryExistence.lean": "a1a18fa60c0d41ef30b303cb5eb008d8cb1aec21ca94aa1d61dcbb48d095a0af",
+    "FiniteMarkovKernels.lean": "2b3cc4dfd22d369652b46f8666f29430b675ced25a03a74e3ee69b5dc3b90303",
+    "FiniteMarkovKernelsExamples/Basic.lean": "fbdae9b8b20a0f1be93ce5f9c59ff7f4c3cf022df925361ceb56150b30c16b68",
+    "FiniteMarkovKernelsExamples.lean": "4e18bbfca88135c9ef93230b28333aaad79c815b122cc19405fbbf1978d16b50"
+  },
+  "verification_program_sha256": "181bf4a9e2a0d6e94993472d727e5d0458c8fd105c79b9e8d1878a74a3e60262",
+  "verification_manifest_sha256": "7a5a4de51a2dc59bc328ca76a8aac289f497f0f7951c5795fd85f8f100bab78d",
+  "source_files": 12,
+  "explicit_public_declarations": 186,
+  "full_linters_per_source": 16,
+  "named_transitive_axioms": {
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_bool": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_apply_bool_eq_rowSeparation_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_bool_eq_rowSeparation_pow_mul": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_bool_dirac_eq_rowSeparation_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_bool_dirac_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.tendsto_totalVariation_iterate_bool_dirac_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.IsStationary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.IsStationary.iterate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.eq_of_isStationary_of_contractionCoefficient_lt_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_stationary_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.eq_of_isStationary_of_iterate_contractionCoefficient_lt_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_blockIterate_stationary_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_block_mul_stationary_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_block_mul_add_stationary_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_eq_one_sub_sum_min": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.sum_sub_min_eq_totalVariation_left": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.sum_sub_min_eq_totalVariation_right": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.normalizedDifference": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.normalizedDifference_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowContractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowTotalVariation_le_rowContractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowContractionCoefficient_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowContractionCoefficient_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_apply_le_rowContractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_apply_eq_mul_residual": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_le_rowContractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowContractionCoefficient_le_contractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_eq_rowContractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowDiscrepancy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowTotalVariation_le_rowDiscrepancy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.rowDiscrepancy_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_apply_same_le_rowDiscrepancy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_same_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_isStationary_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_self": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_comm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_triangle": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_eq_zero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_relabel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_dirac": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_finTwo": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.apply_prob": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.followedBy_prob": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.apply_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.followedBy_assoc": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.identity_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.constant_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.apply_dirac": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.identity_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.followedBy_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.deterministic": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.deterministic_apply_dirac": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.relabelOutput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.relabelOutput_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.relabelInput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.relabelInput_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.relabelOutput_followedBy_relabelInput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.relabelInput_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.followedBy_relabelOutput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.deterministic_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate_succ": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate_zero_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate_succ_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate_add": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.iterate_iterate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_apply_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio_le_contractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_le_of_ratio_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_apply_le_contractionCoefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_followedBy_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_iterate_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.totalVariation_iterate_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio_relabelOutput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio_relabelInput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_relabelOutput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_relabelInput": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionRatio_constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_constant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_identity_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_identity_of_subsingleton": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_deterministic_of_ne": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.contractionCoefficient_followedBy_lt_of_deterministic_collapse": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.exists_strict_contractionCoefficient_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.signedMeasure_totalVariation_univ": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.totalVariation_eq_half_signedMeasure": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.toPMF": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.toPMF_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.ofPMF": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.ofPMF_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.ofPMF_injective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.ofPMF_inj": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.ofPMF_toPMF": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.toPMF_ofPMF": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.pmfEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.ofPMF": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.ofPMF_prob": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.ofPMF_bind": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.ofPMF_followedBy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.ofRows": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.ofRows_apply_singleton": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.toRows": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.toRows_ofRows": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.ofRows_toRows": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.rowsEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteRowMarkovKernel.comp_toMeasure_eq_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.SingletonMarkovKernel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.SingletonMarkovKernel.ofProbabilityVector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.SingletonMarkovKernel.toProbabilityVector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.SingletonMarkovKernel.toProbabilityVector_ofProbabilityVector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.SingletonMarkovKernel.ofProbabilityVector_toProbabilityVector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.SingletonMarkovKernel.probabilityVectorEquiv": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.ext": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.continuous_prob": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.continuous_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.measurable_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.AbsolutelyContinuous": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.absolutelyContinuous_refl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.pos_of_pos_of_absolutelyContinuous": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.apply_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.FullSupport": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.FullSupport.reference": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.Support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.SupportComplement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportFintype": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportNonempty": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.onSupport": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.onSupport_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportMass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportComplementMass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportMass_add_complementMass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportMass_le_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportMass_pos": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.referenceOnSupport": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.referenceOnSupport_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.onSupport_absolutelyContinuous": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.referenceOnSupportComplement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.supportComplementMass_mul_referenceOnSupportComplement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.relabel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.relabel_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.relabel_refl": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.relabel_symm_relabel": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.absolutelyContinuous_relabel_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.compound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.compound_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.compound_absolutelyContinuous": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.dirac": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.dirac_apply": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.binary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.binary_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.binary_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.boolBinary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.boolBinary_false": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.boolBinary_true": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.continuous_boolBinary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.ProbabilityVector.measurable_boolBinary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.exists_isStationary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.existsUnique_isStationary_of_contractionCoefficient_lt_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.FiniteMarkovKernel.existsUnique_isStationary_of_iterate_contractionCoefficient_lt_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.binaryNoise": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.binaryNoise_row_separation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.binaryNoise_exact_rate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.binaryNoise_fair_stationary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.identity_retains_distinction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.binaryNoise_pmf_roundtrip": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.stationaryLaw_and_attraction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.strictRowCoefficient_uniqueStationary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteMarkovKernels.Examples.binaryNoise_signedMeasure_variation": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "approved_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "stages": [
+    {
+      "name": "compiler-version",
+      "exit_code": 0
+    },
+    {
+      "name": "exact-build",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-BinaryKernelContraction.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-BlockErgodicity.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-DobrushinCoefficient.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-KernelPerturbation.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-MarkovKernelContraction.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-MeasureTotalVariation.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-PMFAdapter.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-ProbabilityVector.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels-StationaryExistence.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernels.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernelsExamples-Basic.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "lint-FiniteMarkovKernelsExamples.lean",
+      "exit_code": 0
+    },
+    {
+      "name": "axioms",
+      "exit_code": 0
+    }
+  ],
+  "verifier_controls": "All seven durable regression methods passed",
+  "README_Lean_examples": "Passed native elaboration",
+  "scope": "Author-run source qualification; authored/public dependency caches reused. Subsequent documentation-only seal does not change these Lean/verifier/pin inputs. Separate task evidence binds the final sealed hash to a fresh authored-clone build and independent mathematical/source review.",
+  "hosted_CI": "Separate outcome; this local receipt does not claim hosted Lean execution",
+  "raw_qualification_sha256": "24c10e928ca5229d57adec5560bc63c84d9a7f5dde690b9bf219cd8d9df5ad7b",
+  "original_qualification_records": "Historical records retained unchanged"
+}
