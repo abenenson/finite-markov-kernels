@@ -26,6 +26,8 @@ hypothesis for uniqueness and quantitative decay. Binary formulas remain binary 
 ## Organization
 
 - `ProbabilityVector`: closed finite simplex, support and relabeling operations.
+- `ProbabilityVectorDisintegration`: dependent first marginals, conditional rows with explicit
+  zero-mass fallbacks, and exact reconstruction of the original joint law.
 - `MarkovKernelContraction`: total variation, application, composition and operator coefficient.
 - `DobrushinCoefficient`: row-diameter coefficient and its equality with the operator coefficient.
 - `BlockErgodicity`: uniqueness and attraction under a supplied strict temporal block.
@@ -39,6 +41,16 @@ The top-level import exports the mathematical modules. `FiniteMarkovKernelsExamp
 library target: it is built by the default build but is not imported by the public
 root. Every source has a module description and documented public declarations.
 The only external package requirement is pinned Mathlib and its public dependencies.
+
+## Disintegration and null fibers
+
+`ProbabilityVector.compound_firstMarginal_conditionalRows` factors a dependent finite joint
+law on `Σ a, C a`. The fallback argument supplies a probability row on each fiber, including
+zero-mass fibers. The theorem does not select a canonical conditional there and does not require
+the outer marginal to have full support. The checked
+[`Disintegration` example](../FiniteMarkovKernelsExamples/Disintegration.lean) exhibits two
+different conditionals on the same null fiber and proves that both reconstruct the original
+joint law, while its occupied-fiber conditional is independent of the fallback.
 
 ## Qualification contract
 
@@ -102,6 +114,15 @@ by `python3 scripts/verify.py` and retained separately for the exact checked sou
 ## Mathematical readiness qualification
 
 The [October 23 source qualification](readiness-qualification.json) records unconditional
-finite stationary existence, the Mathlib variation bridge, their consumers and current
-source hashes. Earlier receipts remain historical. Hosted CI and final-candidate review
+finite stationary existence, the Mathlib variation bridge, their consumers and the source
+hashes qualified at that time. Earlier receipts remain historical. Hosted CI and final-candidate review
 are separate results.
+
+## Disintegration qualification, 2026-11-04
+
+The [disintegration qualification](disintegration-qualification.json) records a fresh warning-fatal
+build of all 14 authored sources, all 16 source linters for every file, and the transitive axiom
+audit of all 197 explicit public declarations. Twelve verifier controls cover diagnostic rejection,
+public import boundaries and replacement of stale authored artifacts. The receipt identifies the
+exact source, verifier, manifest and provenance by hashes. Historical receipts remain unchanged;
+this local run does not record hosted CI execution.

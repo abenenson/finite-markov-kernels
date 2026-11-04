@@ -1,0 +1,21 @@
+{
+  "history_policy": "One rewritten commit per original commit, retaining author/committer dates, parent topology and development layers. Only identifying metadata and dependency commit identifiers were normalized.",
+  "proof_commands_unchanged": true,
+  "verification_scope": "Historical proof build and lint records retain their original scope. Python regression checks and source comparisons validate the publication cleanup; no fresh Lean build is claimed.",
+  "source_sha256": {
+    "FiniteMarkovKernels.lean": "5edc90c97b1d22666a99cc668d7426a360b2afe2a8f504305172fc84532437dd",
+    "FiniteMarkovKernels/BinaryKernelContraction.lean": "c67cde8cac564f1f88992cf7ff710a793b16d556d0654d1e39bec32b090d6e3f",
+    "FiniteMarkovKernels/BlockErgodicity.lean": "553cfd4a4d71b293f0a804f457389903881bb5e3550da74a6fb7fde6820c7f4d",
+    "FiniteMarkovKernels/DobrushinCoefficient.lean": "b1e95ac612c6255e2a999bcce7acd600146bfbe1f41ddc7be514faecb230644b",
+    "FiniteMarkovKernels/KernelPerturbation.lean": "6738b924da90ecdf4b675036a0c059aa182408cf72ae6ce71935650fcf674e39",
+    "FiniteMarkovKernels/MarkovKernelContraction.lean": "514415e57c003c6b41fc8bf23e481d3173bc7412e8f4323c709a81d22733c2e4",
+    "FiniteMarkovKernels/MeasureTotalVariation.lean": "d830b16d5c9740f07e4f44e86e31f73d3ea52a00d6b553d3c3749c6ec5866d79",
+    "FiniteMarkovKernels/PMFAdapter.lean": "11aa4ea099a2af1f49a528dd166113091d43a96d4e69c0b40a9fe539c60a6737",
+    "FiniteMarkovKernels/ProbabilityVector.lean": "85be10367fc0140319072718c226ad7aceec0fe7f637bdb0c4150669ca7d8b8f",
+    "FiniteMarkovKernels/ProbabilityVectorDisintegration.lean": "a3f10bb70645dda6af3cd9679d660657f8700b722500227d56bdbfb4e16b32de",
+    "FiniteMarkovKernels/StationaryExistence.lean": "a1a18fa60c0d41ef30b303cb5eb008d8cb1aec21ca94aa1d61dcbb48d095a0af",
+    "FiniteMarkovKernelsExamples.lean": "5375454f5a28e6326694d8063bf6574c39616408de78ad68e09728ff88bbe900",
+    "FiniteMarkovKernelsExamples/Basic.lean": "fbdae9b8b20a0f1be93ce5f9c59ff7f4c3cf022df925361ceb56150b30c16b68",
+    "FiniteMarkovKernelsExamples/Disintegration.lean": "37adb08d591565c998c70ba57083e216811923e334a75616650ffc80bb22d547"
+  }
+}

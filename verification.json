@@ -1,6 +1,7 @@
 {
   "root_module": "FiniteMarkovKernels",
   "source_files": [
+    "FiniteMarkovKernels.lean",
     "FiniteMarkovKernels/BinaryKernelContraction.lean",
     "FiniteMarkovKernels/BlockErgodicity.lean",
     "FiniteMarkovKernels/DobrushinCoefficient.lean",
@@ -9,10 +10,11 @@
     "FiniteMarkovKernels/MeasureTotalVariation.lean",
     "FiniteMarkovKernels/PMFAdapter.lean",
     "FiniteMarkovKernels/ProbabilityVector.lean",
+    "FiniteMarkovKernels/ProbabilityVectorDisintegration.lean",
     "FiniteMarkovKernels/StationaryExistence.lean",
-    "FiniteMarkovKernels.lean",
+    "FiniteMarkovKernelsExamples.lean",
     "FiniteMarkovKernelsExamples/Basic.lean",
-    "FiniteMarkovKernelsExamples.lean"
+    "FiniteMarkovKernelsExamples/Disintegration.lean"
   ],
   "audit_imports": [
     "FiniteMarkovKernels",
@@ -193,6 +195,12 @@
     "FiniteMarkovKernels.ProbabilityVector.boolBinary_true",
     "FiniteMarkovKernels.ProbabilityVector.continuous_boolBinary",
     "FiniteMarkovKernels.ProbabilityVector.measurable_boolBinary",
+    "FiniteMarkovKernels.ProbabilityVector.firstMarginal",
+    "FiniteMarkovKernels.ProbabilityVector.apply_eq_zero_of_firstMarginal_eq_zero",
+    "FiniteMarkovKernels.ProbabilityVector.conditionalRows",
+    "FiniteMarkovKernels.ProbabilityVector.conditionalRows_of_firstMarginal_eq_zero",
+    "FiniteMarkovKernels.ProbabilityVector.conditionalRows_apply_of_firstMarginal_ne_zero",
+    "FiniteMarkovKernels.ProbabilityVector.compound_firstMarginal_conditionalRows",
     "FiniteMarkovKernels.FiniteMarkovKernel.exists_isStationary",
     "FiniteMarkovKernels.FiniteMarkovKernel.existsUnique_isStationary_of_contractionCoefficient_lt_one",
     "FiniteMarkovKernels.FiniteMarkovKernel.existsUnique_isStationary_of_iterate_contractionCoefficient_lt_one",
@@ -204,7 +212,12 @@
     "FiniteMarkovKernels.Examples.binaryNoise_pmf_roundtrip",
     "FiniteMarkovKernels.Examples.stationaryLaw_and_attraction",
     "FiniteMarkovKernels.Examples.strictRowCoefficient_uniqueStationary",
-    "FiniteMarkovKernels.Examples.binaryNoise_signedMeasure_variation"
+    "FiniteMarkovKernels.Examples.binaryNoise_signedMeasure_variation",
+    "FiniteMarkovKernels.Examples.degenerateJoint",
+    "FiniteMarkovKernels.Examples.degenerateJoint_zero_marginal",
+    "FiniteMarkovKernels.Examples.degenerateJoint_occupied_conditional",
+    "FiniteMarkovKernels.Examples.degenerateJoint_null_conditionals_differ",
+    "FiniteMarkovKernels.Examples.degenerateJoint_reconstruction"
   ],
   "examples_module": "FiniteMarkovKernelsExamples",
   "public_dependencies": {

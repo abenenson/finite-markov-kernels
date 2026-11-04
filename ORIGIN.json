@@ -66,6 +66,15 @@
       "copyright": "2026 Adam Benenson",
       "transformation": "Package import and namespace changes only",
       "extracted_sha256": "11aa4ea099a2af1f49a528dd166113091d43a96d4e69c0b40a9fe539c60a6737"
+    },
+    {
+      "source_file": "InformationTheory/Finite/ProbabilityVectorDisintegration.lean",
+      "original_sha256": "764ba2ce30a177e854e95f50d514b3a851d52527ca4d46d434089dd671ac452c",
+      "extracted_file": "FiniteMarkovKernels/ProbabilityVectorDisintegration.lean",
+      "license": "Apache-2.0",
+      "copyright": "2026 Adam Benenson",
+      "transformation": "Package import and namespace changes; module overview clarifies the fallback-row-per-fiber hypothesis; declarations and proofs unchanged",
+      "extracted_sha256": "a3f10bb70645dda6af3cd9679d660657f8700b722500227d56bdbfb4e16b32de"
     }
   ]
 }

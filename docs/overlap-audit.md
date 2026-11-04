@@ -1,7 +1,8 @@
-# Dependency overlap and private inspection scope
+# Dependency overlap and inspection scope
 
-Source audit date: 2026-10-22; pinned-source extension review: 2026-10-23. This is a private standalone packaging candidate, not a claim of
-new mathematics, exclusive formalization, upstream readiness, or Mathlib acceptance.
+Source audit date: 2026-10-22; pinned-source extension review: 2026-10-23; finite disintegration
+addition: 2026-11-04. This standalone package makes no claim of new mathematics, exclusive
+formalization, upstream readiness, or Mathlib acceptance.
 
 The actual [MCMC TotalVariation source](https://github.com/or4nge19/MCMC/blob/b874137741fbdf23eaac83540b9f79a912a2bc0d/MCMC/Finite/TotalVariation.lean)
 already defines finite TV and a row Dobrushin coefficient, with `tvDist_contract`,
@@ -38,3 +39,11 @@ The package's finite existence proof instead uses compactness of the coordinate 
 [`tendsto_birkhoffAverage_apply_sub_birkhoffAverage'`](https://github.com/leanprover-community/mathlib4/blob/d13f23b723b8a846827a245b89c10fc7d3f11612/Mathlib/Dynamics/BirkhoffSum/NormedSpace.lean).
 This is an integration and completeness improvement to the finite-law API. It does not establish
 priority or novelty over other formalizations, including the external MCMC sources above.
+
+## Finite disintegration addition
+
+`ProbabilityVectorDisintegration` adds a finite dependent marginal/conditional factorization.
+It is an elementary discrete probability identity, with explicit fallback laws on zero-mass
+fibers, and carries no mathematical novelty or upstream acceptance claim. It uses the existing
+`ProbabilityVector.compound` API rather than introducing another representation of finite laws.
+Its original source and packaging/documentation adjustments are recorded in `ORIGIN.json`.

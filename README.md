@@ -6,11 +6,15 @@ laws concern endomorphisms on a **nonempty finite** state space.
 
 The public API proves:
 
+- **Finite disintegration:** given a fallback probability row on each fiber, a dependent joint
+  law reconstructs exactly from its first marginal and conditional rows. The fallback supplies
+  conditionals on zero-mass fibers; it has no effect on the reconstructed joint law.
 - **Stationary existence:** every finite endomorphism has a probability vector `π` with
   `K.apply π = π`. The proof uses compactness and Cesàro averages; it needs no positivity,
   irreducibility, or contraction assumption.
-- **Dobrushin identity:** the operator contraction coefficient equals the maximum TV
-  distance between rows. Coefficients are submultiplicative under composition and powers.
+- **Dobrushin identity:** for a nonempty input alphabet, the operator contraction coefficient
+  equals the maximum TV distance between rows. Coefficients are submultiplicative under
+  composition and powers.
 - **Uniqueness and mixing:** a coefficient strictly below one at any finite block gives a
   unique stationary law. For every stationary `π`,
   `TV((K.iterate n).apply p, π) ≤ δ(K)^n * TV(p, π)`, with corresponding block bounds.
@@ -47,6 +51,8 @@ example {A : Type*} [Fintype A] [MeasurableSpace A] [MeasurableSingletonClass A]
 [Checked examples](FiniteMarkovKernelsExamples/Basic.lean) include a binary channel with
 flip probability `1/4`, exact rate `1/2`, a fair stationary law, the measure-variation
 normalization, and generic existence-to-attraction and row-coefficient-to-uniqueness proofs.
+The [disintegration example](FiniteMarkovKernelsExamples/Disintegration.lean) checks exact
+joint-law reconstruction with distinct choices on a zero-mass conditional fiber.
 Import `FiniteMarkovKernelsExamples` to use them.
 
 ## Build
@@ -72,5 +78,5 @@ Related finite TV contraction and mixing formalizations already exist; see the
 [source overlap comparison](docs/overlap-audit.md) for scope and attribution.
 
 Apache 2.0. Copyright 2026 Adam Benenson. See [LICENSE](LICENSE), [NOTICE](NOTICE), and
-[extraction provenance](ORIGIN.json). This remains a private preparation; local verification
-and hosted CI execution are distinct results.
+[extraction provenance](ORIGIN.json). Local verification and hosted CI execution are
+distinct results.
