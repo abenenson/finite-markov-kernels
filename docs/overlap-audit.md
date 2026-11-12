@@ -46,4 +46,4 @@ priority or novelty over other formalizations, including the external MCMC sourc
 It is an elementary discrete probability identity, with explicit fallback laws on zero-mass
 fibers, and carries no mathematical novelty or upstream acceptance claim. It uses the existing
 `ProbabilityVector.compound` API rather than introducing another representation of finite laws.
-Its original source and packaging/documentation adjustments are recorded in `ORIGIN.json`.
+Its initial public package path and digest are recorded in `ORIGIN.json`.

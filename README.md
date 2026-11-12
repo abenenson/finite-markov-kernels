@@ -78,5 +78,5 @@ Related finite TV contraction and mixing formalizations already exist; see the
 [source overlap comparison](docs/overlap-audit.md) for scope and attribution.
 
 Apache 2.0. Copyright 2026 Adam Benenson. See [LICENSE](LICENSE), [NOTICE](NOTICE), and
-[extraction provenance](ORIGIN.json). Local verification and hosted CI execution are
+[initial public file inventory](ORIGIN.json). Local verification and hosted CI execution are
 distinct results.

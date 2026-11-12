@@ -97,7 +97,7 @@ Channel-capacity has concrete positive/counterexample modules; the other project
 scoped APIs, source checks and documentation rather than the same example layout.
 
 This package keeps a small public root, opt-in example imports, Mathlib-only dependencies,
-per-file Apache notices and ORIGIN hashes. Its additional implemented gates are exact-source
+per-file Apache notices and an initial public file inventory. Its additional implemented gates are exact-source
 builds, all16 source linters, the explicit transitive axiom ledger, durable verifier rejection
 controls and always-retained CI evidence configuration. No precedent was modified or requalified.
 The supported pair remains Lean4.34.1/d13f23b; earlier-pair compatibility is not inferred.
