@@ -1,5 +1,7 @@
 # finite-markov-kernels
 
+[![Lean verification](https://github.com/abenenson/finite-markov-kernels/actions/workflows/lean.yml/badge.svg?branch=main)](https://github.com/abenenson/finite-markov-kernels/actions/workflows/lean.yml)
+
 Finite Markov kernels, stationary laws, and quantitative mixing in Lean and Mathlib.
 Probability vectors may have zero coordinates. Kernels may be rectangular; stationary
 laws concern endomorphisms on a **nonempty finite** state space.
