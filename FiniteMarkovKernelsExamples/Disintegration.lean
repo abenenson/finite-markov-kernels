@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.ProbabilityVectorDisintegration
+module
+
+public import FiniteMarkovKernels.ProbabilityVectorDisintegration
 
 /-!
 # Disintegration with a zero-mass marginal
@@ -12,6 +14,8 @@ A joint law concentrated at `(false, true)` has a genuinely unconstrained condit
 outer value `true`. Changing that conditional from `dirac false` to `dirac true` changes the
 conditional row while leaving the reconstructed joint law unchanged.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels.Examples
 

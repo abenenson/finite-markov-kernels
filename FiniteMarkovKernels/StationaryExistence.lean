@@ -3,9 +3,11 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.BlockErgodicity
-import Mathlib.Dynamics.BirkhoffSum.NormedSpace
-import Mathlib.Topology.MetricSpace.Sequences
+module
+
+public import FiniteMarkovKernels.BlockErgodicity
+public import Mathlib.Dynamics.BirkhoffSum.NormedSpace
+public import Mathlib.Topology.MetricSpace.Sequences
 
 /-!
 # Stationary laws on nonempty finite state spaces
@@ -14,6 +16,8 @@ Cesàro averages of any orbit lie in the compact finite probability simplex. A c
 subsequence has a stationary limit, since shifting a bounded orbit changes its averages by a
 quantity tending to zero. No irreducibility, positivity, or contraction assumption is needed.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels.FiniteMarkovKernel
 

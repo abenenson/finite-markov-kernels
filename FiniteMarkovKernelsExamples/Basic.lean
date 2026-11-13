@@ -3,13 +3,17 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels
+module
+
+public import FiniteMarkovKernels
 
 /-!
 # A noisy binary kernel and its nonmixing control
 
 Exact geometric contraction, an explicit stationary law, and PMF interoperability.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels.Examples
 

@@ -3,8 +3,10 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import Mathlib.Algebra.BigOperators.Field
-import FiniteMarkovKernels.ProbabilityVector
+module
+
+public import Mathlib.Algebra.BigOperators.Field
+public import FiniteMarkovKernels.ProbabilityVector
 
 /-!
 # Finite probability-vector disintegration
@@ -20,6 +22,8 @@ of that choice.
 - `ProbabilityVector.conditionalRows`: normalized conditional rows with zero-mass fallbacks.
 - `ProbabilityVector.compound_firstMarginal_conditionalRows`: exact joint-law reconstruction.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 

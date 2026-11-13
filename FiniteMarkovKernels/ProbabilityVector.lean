@@ -3,9 +3,11 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Data.Fintype.Sigma
-import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Data.Fintype.Sigma
+public import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
 
 /-!
 # Finite probability vectors with boundary
@@ -22,6 +24,8 @@ chain rules.
 - `ProbabilityVector.compound`: dependent block composition on a sigma type.
 - `ProbabilityVector.compound_absolutelyContinuous`: support transport through composition.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 

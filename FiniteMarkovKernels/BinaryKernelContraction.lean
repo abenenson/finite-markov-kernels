@@ -3,8 +3,10 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import Mathlib.Analysis.SpecificLimits.Basic
-import FiniteMarkovKernels.DobrushinCoefficient
+module
+
+public import Mathlib.Analysis.SpecificLimits.Basic
+public import FiniteMarkovKernels.DobrushinCoefficient
 
 /-!
 # Exact total-variation contraction of binary kernels
@@ -25,6 +27,8 @@ only the usual Dobrushin upper bound.
 - `FiniteMarkovKernel.tendsto_totalVariation_iterate_bool_dirac_zero`: strict row contraction
   erases the initial distinction asymptotically.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 

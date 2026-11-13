@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.MarkovKernelContraction
+module
+
+public import FiniteMarkovKernels.MarkovKernelContraction
 
 /-!
 # Dobrushin row coefficient for finite Markov kernels
@@ -18,6 +20,8 @@ relates it to mixtures of those rows.
 - `FiniteMarkovKernel.totalVariation_apply_le_rowContractionCoefficient`.
 - `FiniteMarkovKernel.rowContractionCoefficient_le_contractionCoefficient`.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 
