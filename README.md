@@ -59,12 +59,12 @@ Import `FiniteMarkovKernelsExamples` to use them.
 
 ## Build
 
-Pinned and tested: **Lean 4.34.1**, **Mathlib
-`d13f23b723b8a846827a245b89c10fc7d3f11612`**. Transitive dependencies are locked in
+Pinned and tested: **Lean 4.35.0**, **Mathlib
+`56a005855ea17e0b0958f73ec801ae140b0a1679`**. Transitive dependencies are locked in
 [lake-manifest.json](lake-manifest.json).
 
 ```bash
-lake exe cache get
+python3 scripts/fetch_mathlib_cache.py
 lake --rehash --wfail build
 python3 scripts/verify.py
 ```
@@ -82,3 +82,5 @@ Related finite TV contraction and mixing formalizations already exist; see the
 Apache 2.0. Copyright 2026 Adam Benenson. See [LICENSE](LICENSE), [NOTICE](NOTICE), and
 [initial public file inventory](ORIGIN.json). Local verification and hosted CI execution are
 distinct results.
+
+The fresh [compatibility qualification](docs/compatibility-qualification.json) records this pair.

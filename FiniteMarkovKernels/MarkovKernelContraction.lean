@@ -3,10 +3,12 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Order.ConditionallyCompleteLattice.Basic
-import FiniteMarkovKernels.ProbabilityVector
+module
+
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+public import FiniteMarkovKernels.ProbabilityVector
 
 /-!
 # Total-variation contraction for finite Markov kernels
@@ -32,6 +34,8 @@ composition of finite stochastic kernels.
 - `FiniteMarkovKernel.totalVariation_iterate_le`.
 - `FiniteMarkovKernel.exists_strict_contractionCoefficient_followedBy`.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 

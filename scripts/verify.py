@@ -169,6 +169,21 @@ def clear_authored_artifacts(root, source_files):
     return removed
 
 
+def manifest_dependencies(packages):
+    """Read supported single-component Lake names without changing package paths or pins."""
+    dependencies = {}
+    for entry in packages:
+        serialized = entry['name']
+        assert isinstance(serialized, str), 'Non-string manifest package name'
+        name = (serialized[1:-1] if serialized.startswith('«') and serialized.endswith('»')
+                else serialized)
+        assert re.fullmatch(r'[A-Za-z_][A-Za-z0-9_-]*', name), \
+            'Unsupported manifest package name: ' + serialized
+        assert name not in dependencies, 'Duplicate manifest package name: ' + name
+        dependencies[name] = entry
+    return dependencies
+
+
 def import_roots(config):
     """Allow extra library roots only for explicitly pinned public dependencies."""
     roots = [config['root_module'], config['examples_module']]
@@ -246,10 +261,10 @@ def main():
             'Authored Lean file coverage differs from manifest'
         toolchain = (root / 'lean-toolchain').read_text().strip()
         version = run('compiler-version', ['lake', 'env', 'lean', '--version']).strip()
-        assert toolchain == 'leanprover/lean4:v4.34.1' and 'version 4.34.1,' in version
+        assert toolchain == 'leanprover/lean4:v4.35.0' and 'version 4.35.0,' in version
         record['compiler_version'] = version
         manifest = json.loads((root / 'lake-manifest.json').read_text())
-        dependencies = {p['name']: p for p in manifest['packages']}
+        dependencies = manifest_dependencies(manifest['packages'])
         assert set(dependencies) == set(config['public_dependencies'])
         record['dependency_revisions'] = {}
         for name, expected in config['public_dependencies'].items():
@@ -287,15 +302,19 @@ def main():
         for relative in config['source_files']:
             path = evidence / 'lint-sources' / relative
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text('import Mathlib.Tactic.Linter.Lint\n' +
-                            (root / relative).read_text() + '\n#lint docBlame docBlameThm\n')
+            source = (root / relative).read_text()
+            assert re.search(r'^module$', source, re.M), relative
+            source = source.replace('module\n',
+                                    'module\nimport Mathlib.Tactic.Linter.Lint\n', 1)
+            path.write_text(source + '\n#lint docBlame docBlameThm\n')
             output = run('lint-' + relative.replace('/', '-'),
                          ['lake', 'env', 'lean', '-j2', '--json',
                           '--root=' + str(evidence / 'lint-sources'), str(path)])
             clean = messages(output)
             assert '-- All linting checks passed!' in clean, relative
             assert 'with 16 linters' in clean, relative
-        probe = '\n'.join('import ' + name for name in config['audit_imports']) + '\n'
+        probe = 'module\n' + '\n'.join(
+            'import ' + name for name in config['audit_imports']) + '\n'
         probe += '\n'.join('#print axioms ' + name for name in names) + '\n'
         (evidence / 'axioms.lean').write_text(probe)
         output = messages(run('axioms', ['lake', 'env', 'lean', '-j2', '--json',

@@ -3,8 +3,10 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.PMFAdapter
-import Mathlib.MeasureTheory.VectorMeasure.Variation.SignedMeasure
+module
+
+public import FiniteMarkovKernels.PMFAdapter
+public import Mathlib.MeasureTheory.VectorMeasure.Variation.SignedMeasure
 
 /-!
 # Measure-theoretic total variation of finite laws
@@ -12,6 +14,8 @@ import Mathlib.MeasureTheory.VectorMeasure.Variation.SignedMeasure
 Mathlib's signed-measure total variation is the full variation measure. Its total mass is
 **twice** the probability-distance convention `ProbabilityVector.totalVariation`.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels.ProbabilityVector
 

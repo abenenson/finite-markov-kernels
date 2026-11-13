@@ -3,11 +3,13 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import Mathlib.Probability.Kernel.Basic
-import Mathlib.Probability.Kernel.Composition.MeasureComp
-import Mathlib.Probability.ProbabilityMassFunction.Monad
-import Mathlib.MeasureTheory.Integral.Lebesgue.Countable
-import FiniteMarkovKernels.MarkovKernelContraction
+module
+
+public import Mathlib.Probability.Kernel.Basic
+public import Mathlib.Probability.Kernel.Composition.MeasureComp
+public import Mathlib.Probability.ProbabilityMassFunction.Monad
+public import Mathlib.MeasureTheory.Integral.Lebesgue.Countable
+public import FiniteMarkovKernels.MarkovKernelContraction
 
 /-!
 # Finite probability-mass-function adapter
@@ -27,6 +29,8 @@ simplex used by the finite-kernel contraction calculus.
 - `FiniteRowMarkovKernel.rowsEquiv`.
 - `SingletonMarkovKernel.probabilityVectorEquiv`.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 

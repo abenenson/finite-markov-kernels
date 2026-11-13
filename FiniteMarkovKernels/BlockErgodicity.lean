@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.MarkovKernelContraction
+module
+
+public import FiniteMarkovKernels.MarkovKernelContraction
 
 /-!
 # Block ergodicity for finite Markov kernels
@@ -22,6 +24,8 @@ total-variation contraction coefficient at a finite temporal block.
 - `FiniteMarkovKernel.totalVariation_iterate_block_mul_stationary_le`.
 - `FiniteMarkovKernel.totalVariation_iterate_block_mul_add_stationary_le`.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 

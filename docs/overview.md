@@ -100,7 +100,8 @@ This package keeps a small public root, opt-in example imports, Mathlib-only dep
 per-file Apache notices and an initial public file inventory. Its additional implemented gates are exact-source
 builds, all16 source linters, the explicit transitive axiom ledger, durable verifier rejection
 controls and always-retained CI evidence configuration. No precedent was modified or requalified.
-The supported pair remains Lean4.34.1/d13f23b; earlier-pair compatibility is not inferred.
+The supported pair is Lean 4.35.0 / Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679`.
+Earlier receipts below retain their original compiler and source identities.
 
 ## Readiness additions, 2026-10-23
 
@@ -126,3 +127,11 @@ audit of all 197 explicit public declarations. Twelve verifier controls cover di
 public import boundaries and replacement of stale authored artifacts. The receipt identifies the
 exact source, verifier, manifest and provenance by hashes. Historical receipts remain unchanged;
 this local run does not record hosted CI execution.
+
+## Lean 4.35 compatibility
+
+The [compatibility qualification](compatibility-qualification.json) records fresh exact-source
+builds, all 16 linters per source, and the complete named transitive axiom audit on Lean 4.35.0.
+Explicit public imports and exposed public sections preserve the exported APIs and definition
+bodies. Dependency preparation requests the focused Mathlib import closure and validates every
+locked dependency before cache retrieval. Earlier receipts remain historical.

@@ -3,19 +3,23 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.ProbabilityVector
-import FiniteMarkovKernels.ProbabilityVectorDisintegration
-import FiniteMarkovKernels.MarkovKernelContraction
-import FiniteMarkovKernels.DobrushinCoefficient
-import FiniteMarkovKernels.BlockErgodicity
-import FiniteMarkovKernels.KernelPerturbation
-import FiniteMarkovKernels.BinaryKernelContraction
-import FiniteMarkovKernels.PMFAdapter
-import FiniteMarkovKernels.StationaryExistence
-import FiniteMarkovKernels.MeasureTotalVariation
+module
+
+public import FiniteMarkovKernels.ProbabilityVector
+public import FiniteMarkovKernels.ProbabilityVectorDisintegration
+public import FiniteMarkovKernels.MarkovKernelContraction
+public import FiniteMarkovKernels.DobrushinCoefficient
+public import FiniteMarkovKernels.BlockErgodicity
+public import FiniteMarkovKernels.KernelPerturbation
+public import FiniteMarkovKernels.BinaryKernelContraction
+public import FiniteMarkovKernels.PMFAdapter
+public import FiniteMarkovKernels.StationaryExistence
+public import FiniteMarkovKernels.MeasureTotalVariation
 
 /-!
 # FiniteMarkovKernels
 
 Public imports for the standalone library. Examples remain opt-in.
 -/
+
+@[expose] public section

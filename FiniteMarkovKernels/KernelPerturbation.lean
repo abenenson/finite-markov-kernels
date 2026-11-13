@@ -3,7 +3,9 @@ Copyright (c) 2026 Adam Benenson. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Adam Benenson
 -/
-import FiniteMarkovKernels.BlockErgodicity
+module
+
+public import FiniteMarkovKernels.BlockErgodicity
 
 /-!
 # Perturbation bounds for finite Markov kernels
@@ -18,6 +20,8 @@ laws. The stationary bound uses a strict contraction at a supplied finite tempor
 - `FiniteMarkovKernel.totalVariation_iterate_same_le`.
 - `FiniteMarkovKernel.totalVariation_isStationary_le`.
 -/
+
+@[expose] public section
 
 namespace FiniteMarkovKernels
 
