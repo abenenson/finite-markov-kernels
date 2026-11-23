@@ -84,3 +84,13 @@ Apache 2.0. Copyright 2026 Adam Benenson. See [LICENSE](LICENSE), [NOTICE](NOTIC
 distinct results.
 
 The fresh [compatibility qualification](docs/compatibility-qualification.json) records this pair.
+
+## Releases and related libraries
+
+Start with the [`v0.1.0` release](https://github.com/abenenson/finite-markov-kernels/releases/tag/v0.1.0) for the supported toolchain and verification run.
+
+- [finite-markov-processes](https://github.com/abenenson/finite-markov-processes) covers continuous-time jump processes.
+- [finite-relative-entropy](https://github.com/abenenson/finite-relative-entropy) covers KL divergence and strong data processing.
+- [finite-causal-control](https://github.com/abenenson/finite-causal-control) covers finite-horizon KL control.
+
+[Browse the Lean library index](https://adambenenson.com/projects/#formal-methods).
